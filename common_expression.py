@@ -10,8 +10,8 @@ class CommonExpression:
         return {
             "required": {
                 "operation": (["KeywordInString", "KeywordAllInString", "==", "!=", ">", "<", ">=", "<="],),
-                "input_a": ("STRING", {"multiline": True, "default": ""}),
-                "input_b": ("STRING", {"multiline": False, "default": ""})
+                "input_a": ("STRING", {"multiline": True, "default": "", "dynamicPrompts": True}),
+                "input_b": ("STRING", {"multiline": False, "default": "", "dynamicPrompts": True})
             }
         }
 
