@@ -23,12 +23,12 @@ class CommonExpression:
                     ],
                 ),
                 "input_a": (
-                    "ANY",
+                    "STRING",
                     {"multiline": False, "default": "", "dynamicPrompts": True},
                 ),
                 "input_b": (
                     "STRING",
-                    {"multiline": True, "default": "", "dynamicPrompts": False},
+                    {"multiline": False, "default": "", "dynamicPrompts": False},
                 ),
             }
         }
