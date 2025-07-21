@@ -27,8 +27,8 @@ class CommonExpression:
                     {"multiline": False, "default": "", "dynamicPrompts": True},
                 ),
                 "input_b": (
-                    "ANY",
-                    {"multiline": False, "default": "", "dynamicPrompts": True},
+                    "STRING",
+                    {"multiline": True, "default": "", "dynamicPrompts": False},
                 ),
             }
         }
