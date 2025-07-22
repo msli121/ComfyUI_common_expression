@@ -20,6 +20,8 @@ class CommonExpression:
                         "<",
                         ">=",
                         "<=",
+                        "and",
+                        "or"
                     ],
                 ),
                 "input_a": (
@@ -80,6 +82,29 @@ class CommonExpression:
                     result = float(input_a) <= float(input_b)
                 except:
                     result = len(input_a) <= len(input_b)
+
+            elif operation == "and":
+                input_a = input_a.lower()
+                if input_a in ['true', '1', 't', 'y', 'yes']:
+                    input_a_bool = True
+                else:
+                    input_a_bool = False
+                if input_b in ['true', '1', 't', 'y', 'yes']:
+                    input_b_bool = True
+                else:
+                    input_b_bool = False
+                result = input_a_bool and input_b_bool
+
+            elif operation == "or":
+                if input_a in ['true', '1', 't', 'y', 'yes']:
+                    input_a_bool = True
+                else:
+                    input_a_bool = False
+                if input_b in ['true', '1', 't', 'y', 'yes']:
+                    input_b_bool = True
+                else:
+                    input_b_bool = False
+                result = input_a_bool or input_b_bool
 
         except Exception as e:
             print(f"表达式计算错误: {str(e)}")
