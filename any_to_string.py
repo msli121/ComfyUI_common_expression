@@ -8,7 +8,8 @@ class AnyToString:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "input_data": ("*",),  # Accept any type
+                "input_data": (
+                ["STRING", "BOOLEAN", "INT", "FLOAT", "LIST", "DICT", "MODEL", "IMAGE", "CONDITIONING", "LATENT"],),
             }
         }
 
