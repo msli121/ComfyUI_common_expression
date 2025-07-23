@@ -1,3 +1,5 @@
+import json
+
 class AnyToString:
     def __init__(self):
         pass
@@ -6,18 +8,20 @@ class AnyToString:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "input": ("ANY", {"default": None, "dynamicPrompts": True, "optional": True}),
-                "input_boolean": ("BOOLEAN", {"default": None, "dynamicPrompts": True, "optional": True}),
+                "input_data": ("*",),  # Accept any type
             }
         }
 
     RETURN_TYPES = ("STRING",)
-    FUNCTION = "convert"
-    CATEGORY = "utils/convert"
+    RETURN_NAMES = ("string_result",)
+    FUNCTION = "to_string"
+    CATEGORY = "utils/string"
 
-    def convert(self, input, as_boolean=None):
-        if as_boolean is not None:
-            return str(as_boolean)
-        if input is None:
-            return ("",)
-        return (str(input),)
+    def to_string(self, input_data):
+        try:
+            # Try converting to JSON string if possible (for better structure)
+            string_result = json.dumps(input_data, ensure_ascii=False)
+        except (TypeError, ValueError):
+            # Fallback to Python str()
+            string_result = str(input_data)
+        return (string_result,)
