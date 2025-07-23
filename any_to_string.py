@@ -8,7 +8,7 @@ class AnyToString:
     @classmethod
     def INPUT_TYPES(cls):
         return {
-            "required": {
+            "optional": {
                 "boolean_input": ("BOOLEAN", {"default": None}),
                 "int_input": ("INT", {"default": None}),
                 "float_input": ("FLOAT", {"default": None}),
