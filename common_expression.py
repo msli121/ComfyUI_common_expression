@@ -17,7 +17,9 @@ class CommonExpression:
                         ">=",
                         "<=",
                         "and",
-                        "or"
+                        "or",
+                        "chinese_chars_count_ge",
+                        "chinese_chars_count_le",
                     ],
                 ),
                 "input_a": (
@@ -101,6 +103,20 @@ class CommonExpression:
                 else:
                     input_b_bool = False
                 result = input_a_bool or input_b_bool
+
+            elif operation == "chinese_chars_count_ge":
+                chinese_char_count = int(input_b)
+                input_a = str(input_a)
+                # 统计input_a中中文字符个数
+                chinese_chars = [char for char in input_a if '\u4e00' <= char <= '\u9fa5']
+                result = len(chinese_chars) >= chinese_char_count
+
+            elif operation == "chinese_chars_count_le":
+                chinese_char_count = int(input_b)
+                input_a = str(input_a)
+                # 统计input_a中中文字符个数
+                chinese_chars = [char for char in input_a if '\u4e00' <= char <= '\u9fa5']
+                result = len(chinese_chars) <= chinese_char_count
 
         except Exception as e:
             print(f"表达式计算错误: {str(e)}")
