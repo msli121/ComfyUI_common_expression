@@ -6,7 +6,7 @@ class AnyToString:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "input": ("ANY", {"default": None, "dynamicPrompts": True}),
+                "input": ("ANY", {"default": None, "dynamicPrompts": True, "optional": True}),
                 "input_boolean": ("BOOLEAN", {"default": None, "optional": True}),
             }
         }
