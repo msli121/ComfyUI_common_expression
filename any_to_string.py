@@ -7,7 +7,7 @@ class AnyToString:
         return {
             "required": {
                 "input": ("ANY", {"default": None, "dynamicPrompts": True, "optional": True}),
-                "input_boolean": ("BOOLEAN", {"default": None, "optional": True}),
+                "input_boolean": ("BOOLEAN", {"default": None, "dynamicPrompts": True, "optional": True}),
             }
         }
 
